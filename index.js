@@ -65,13 +65,14 @@ function blame( options, callback ) {
 		}
 
 		var patternIndex = 0;
-		var patternMatches = blame.filter(function( line ) {
-			return pattern.test( line.content );
-		});
+		
+		//var patternMatches = blame.filter(function( line ) {
+		//	return pattern.test( line.content );
+		//});
 
-		if ( !patternMatches.length ) {
-			return callback( null, null );
-		}
+		//if ( !patternMatches.length ) {
+		//	return callback( null, null );
+		//}
 
 		function doAction( error, action ) {
 			if ( error ) {
@@ -176,7 +177,6 @@ function showPatternMatch( blame, callback ) {
 		"Author: %aN <%aE>\n" +
 		"Date:   %cd (%cr)\n" +
 		"Path:   " + blame.path + "\n" +
-		"Match:  " + patternIndex + " of " + patternCount + "\n" +
 		"\n" +
 		"    %s\n";
 
