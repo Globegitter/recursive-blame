@@ -66,13 +66,11 @@ function blame( options, callback ) {
 
 		var patternIndex = 0;
 		
-		//var patternMatches = blame.filter(function( line ) {
-		//	return pattern.test( line.content );
-		//});
+		var patternMatches = blame;
 
-		//if ( !patternMatches.length ) {
-		//	return callback( null, null );
-		//}
+		if ( !patternMatches.length ) {
+			return callback( null, null );
+		}
 
 		function doAction( error, action ) {
 			if ( error ) {
@@ -145,8 +143,8 @@ function blame( options, callback ) {
 
 			showPatternMatch({
 				full: blame,
-				//patternMatches: patternMatches,
-				//patternIndex: patternIndex,
+				patternMatches: patternMatches,
+				patternIndex: patternIndex,
 				path: options.path,
 				context: context
 			}, doAction );
@@ -169,8 +167,8 @@ function showHelp() {
 function showPatternMatch( blame, callback ) {
 	var totalLines = blame.full.length;
 	var patternIndex = blame.patternIndex + 1;
-	//var patternCount = blame.patternMatches.length;
-	//var line = blame.patternMatches[ blame.patternIndex ];
+	var patternCount = blame.patternMatches.length;
+	var line = blame.patternMatches[ blame.patternIndex ];
 	var context = blame.context;
 	var format =
 		"Commit: %C(yellow)%H%Creset\n" +
