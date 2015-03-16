@@ -169,8 +169,8 @@ function showHelp() {
 function showPatternMatch( blame, callback ) {
 	var totalLines = blame.full.length;
 	var patternIndex = blame.patternIndex + 1;
-	var patternCount = blame.patternMatches.length;
-	var line = blame.patternMatches[ blame.patternIndex ];
+	//var patternCount = blame.patternMatches.length;
+	//var line = blame.patternMatches[ blame.patternIndex ];
 	var context = blame.context;
 	var format =
 		"Commit: %C(yellow)%H%Creset\n" +
