@@ -145,8 +145,8 @@ function blame( options, callback ) {
 
 			showPatternMatch({
 				full: blame,
-				patternMatches: patternMatches,
-				patternIndex: patternIndex,
+				//patternMatches: patternMatches,
+				//patternIndex: patternIndex,
 				path: options.path,
 				context: context
 			}, doAction );
